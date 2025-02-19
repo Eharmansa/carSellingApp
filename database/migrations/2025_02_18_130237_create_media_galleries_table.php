@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('media_galleries', function (Blueprint $table) {
             $table->id();
-            $table->UnsignedBigInteger('araba_id');
+            $table->UnsignedBigInteger('car_id');
 
 
             $table->softDeletes();
             $table->timestamps();
 
 
-            $table->foreign('araba_id')->on('cars')->references('id')->onDelete('cascade');
+            $table->foreign('car_id')->on('cars')->references('id')->onDelete('cascade');
         });
     }
 
